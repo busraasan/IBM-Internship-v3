@@ -282,17 +282,11 @@ class MemoryReport:
         for i in range(0,len(d2_sizes)):
             sizes.append(d2_sizes[i][0])
 
-        #fig1, ax1 = plt.subplots(figsize=(3, 3))
-        #fig1, ax1 = plt.subplots()
-        #fig1.subplots_adjust(0.1,0,1,1)
-
         colors = cm.rainbow(np.linspace(0, 1, len(sizes)))
         plt.gca().axis("equal")
         plt.pie(sizes, labels=labels, colors=colors, autopct = '%1.1f%%', pctdistance=1.25, labeldistance=0.9, textprops={'fontsize': 8})
         plt.title("Percentage Memory Usage for " + self.client.client_name + " in 1 month")
-        #legend_labels = ['%s, %1.1f %%' % (l, s) for l, s in zip(labels, sizes)]
-        #plt.legend(pie[0], labels=labels, bbox_to_anchor=(0.5,0.5), loc='center right', fontsize=8)
-        #plt.subplots_adjust(left=0.1, bottom=0.1, right=0.11)
+
         plt.savefig(savepath)
         width = 3*WIDTH/5
         return savepath, width
