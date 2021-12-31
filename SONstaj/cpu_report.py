@@ -31,13 +31,6 @@ class ClientReport:
 
         #client object will be passed and graphs related to that client will be printed as a seperate pdf.
         self.client = client
-
-        # self.chart_row = 1
-        # self.figure_num = 0
-        # self.page_num = 1
-        # self.minus = 0
-        # self.figure_per_page_num = 0
-
         self.total_usage = 0
 
         self.create_pdf()
